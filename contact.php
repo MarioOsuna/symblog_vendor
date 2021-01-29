@@ -1,9 +1,3 @@
-<?php
-
-
-include 'datos.php';
-
-?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -15,8 +9,8 @@ include 'datos.php';
     <link href='http://fonts.googleapis.com/css?family=Irish+Grover' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=La+Belle+Aurore' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="./img/favicon.png" />
-    <link rel="stylesheet" href="./css/screen.css">
     <link rel="stylesheet" href="./css/blog.css">
+    <link rel="stylesheet" href="./css/screen.css">
     <link rel="stylesheet" href="./css/web.css">
     <link rel="stylesheet" href="./css/sidebar.css">
 
@@ -33,6 +27,7 @@ include 'datos.php';
                         <li><a href="about.php">About</a></li>
                         <li><a href="contact.php">Contact</a></li>
                         <li><a href="addBlog.php">Añadir blog</a></li>
+
                     </ul>
                 </nav>
             </div>
@@ -43,32 +38,16 @@ include 'datos.php';
         </header>
         <div class="dis">
             <section class="main-col">
+                <h2>Contact Symblog</h2>
+                <p>Want to contact symblog?</p>
+                <form id="formulario" action="contact.php" method="get">
+                    <div>Name:&nbsp;&nbsp;<input type="text"></div><br>
+                    <div>Email:&nbsp;&nbsp;</div><input type="text"><br>
+                    <div>Subject:&nbsp;&nbsp;<input type="text"></div><br>
+                    <div>Body:&nbsp;&nbsp;<textarea name="" id="" cols="50" rows="10"></textarea></div><br>
 
-                <?php
-                foreach ($blogs as $key => $value) {
-                    echo "<article class='blog'>
-                <div class='date'>
-                    <time datetime=''>" . $value->getCreated() . "</time>
-                </div>
-                <header>
-                    <h2><a href='show.php?id=$key'>" . $value->getTitle() . "</a></h2>
-                </header>
-                <img src='./img/" . $value->getImage() . "'/>
-                <div class='snippet'>
-                    <p>" . $value->getBlog() . "</p>
-                    <p class='continue'><a href='#'>Continue reading...</a></p>
-                </div>
-                <footer class='meta'>
-                    <p>Comments: <a href='#'>" . $value->getNComment() . " </a></p>
-                    <p>Posted by <span class='highlight'>" . $value->getAuthor() . "</span> at " . $value->getHora() . "</p>
-                    <p>Tags: <span class='highlight'>" . $value->getTags() . "</span></p>
-                </footer>
-            </article>";
-                }
+                </form>
 
-                ?>
-
-              
             </section>
             <aside class="sidebar">
                 <section class="section">

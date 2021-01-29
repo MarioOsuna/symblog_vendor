@@ -1,9 +1,3 @@
-<?php
-
-
-include 'datos.php';
-
-?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -44,31 +38,11 @@ include 'datos.php';
         <div class="dis">
             <section class="main-col">
 
-                <?php
-                foreach ($blogs as $key => $value) {
-                    echo "<article class='blog'>
-                <div class='date'>
-                    <time datetime=''>" . $value->getCreated() . "</time>
-                </div>
-                <header>
-                    <h2><a href='show.php?id=$key'>" . $value->getTitle() . "</a></h2>
-                </header>
-                <img src='./img/" . $value->getImage() . "'/>
-                <div class='snippet'>
-                    <p>" . $value->getBlog() . "</p>
-                    <p class='continue'><a href='#'>Continue reading...</a></p>
-                </div>
-                <footer class='meta'>
-                    <p>Comments: <a href='#'>" . $value->getNComment() . " </a></p>
-                    <p>Posted by <span class='highlight'>" . $value->getAuthor() . "</span> at " . $value->getHora() . "</p>
-                    <p>Tags: <span class='highlight'>" . $value->getTags() . "</span></p>
-                </footer>
-            </article>";
-                }
+                <h2>About Symblog</h2>
+                <div>Lorem ipsum dolor sit amet consectetur adipiscing elit condimentum magna habitant, viverra interdum quam ac purus nullam facilisi metus ullamcorper, integer leo nisi nulla ad cubilia lacus orci commodo. Pharetra fames aenean primis malesuada sed porttitor habitasse morbi lobortis aliquam turpis donec, non iaculis dui inceptos velit vestibulum himenaeos litora netus convallis laoreet. Cubilia dictum leo habitant suscipit felis, gravida iaculis mattis nec, nibh quam sed penatibus.<br>
+                    Egestas velit litora sodales convallis nisl sociis sociosqu, sollicitudin enim venenatis pulvinar feugiat a, sed augue nec facilisi natoque praesent. Facilisis sed aliquet commodo condimentum neque sociis inceptos molestie vivamus class, curae eget fermentum bibendum nec metus diam litora. Taciti euismod auctor vestibulum feugiat eu et lectus pulvinar leo purus ultrices, augue laoreet aliquet ac etiam orci luctus tristique netus montes cursus, vulputate eget himenaeos gravida curabitur odio habitant est neque massa.</div>
 
-                ?>
 
-              
             </section>
             <aside class="sidebar">
                 <section class="section">

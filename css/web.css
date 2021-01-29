@@ -7,6 +7,11 @@
     margin-bottom: 10px;
 }
 
+#formulario div {
+    display: flex;
+    justify-content: flex-end;
+}
+
 form.blogger {
     font-size: 16px;
 }

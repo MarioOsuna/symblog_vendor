@@ -1,7 +1,8 @@
 <?php
 
 
-include 'datos.php';
+$id = $_GET['id'];
+
 
 ?>
 <!DOCTYPE html>
@@ -45,30 +46,31 @@ include 'datos.php';
             <section class="main-col">
 
                 <?php
-                foreach ($blogs as $key => $value) {
+                /* 
                     echo "<article class='blog'>
                 <div class='date'>
-                    <time datetime=''>" . $value->getCreated() . "</time>
+                    <time datetime=''>" . $id->getCreated() . "</time>
                 </div>
                 <header>
-                    <h2><a href='show.php?id=$key'>" . $value->getTitle() . "</a></h2>
+                    <h2><a href='show.php?id=n'>" . $id->getTitle() . "</a></h2>
                 </header>
-                <img src='./img/" . $value->getImage() . "'/>
+                <img src='./img/" . $id->getImage() . "'/>
                 <div class='snippet'>
-                    <p>" . $value->getBlog() . "</p>
+                    <p>" . $id->getBlog() . "</p>
                     <p class='continue'><a href='#'>Continue reading...</a></p>
                 </div>
                 <footer class='meta'>
-                    <p>Comments: <a href='#'>" . $value->getNComment() . " </a></p>
-                    <p>Posted by <span class='highlight'>" . $value->getAuthor() . "</span> at " . $value->getHora() . "</p>
-                    <p>Tags: <span class='highlight'>" . $value->getTags() . "</span></p>
+                    <p>Comments: <a href='#'>" . $id->getNComment() . " </a></p>
+                    <p>Posted by <span class='highlight'>" . $id->getAuthor() . "</span> at " . $id->getHora() . "</p>
+                    <p>Tags: <span class='highlight'>" . $id->getTags() . "</span></p>
                 </footer>
-            </article>";
-                }
+            </article>"; */
+             
+
 
                 ?>
 
-              
+
             </section>
             <aside class="sidebar">
                 <section class="section">

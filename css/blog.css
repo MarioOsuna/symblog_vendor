@@ -11,6 +11,11 @@ form {
     font-size: 16px;
 }
 
+#formulario div {
+    display: flex;
+    justify-content: flex-end;
+}
+
 form div {
     clear: left;
     margin-bottom: 10px;
@@ -21,7 +26,7 @@ form label {
     margin-right: 10px;
     text-align: right;
     width: 100px;
-    fontweight: bold;
+    font-weight: bold;
     vertical-align: top;
     padding-top: 10px;
 }
@@ -30,7 +35,7 @@ form input[type="submit"] {
     margin-left: 110px;
     width: 508px;
     line-height: 26px;
-    fontsize: 20px;
+    font-size: 20px;
     min-height: 26px;
 }
 
@@ -59,7 +64,7 @@ form ul li {
     border-bottom: 1px solid #ccc;
     font-size: 24px;
     color: #666;
-    lineheight: 30px
+    line-height: 30px
 }
 
 .blog {

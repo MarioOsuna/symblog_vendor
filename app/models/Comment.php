@@ -3,11 +3,8 @@
 namespace App\Models;
 
 
-use DBAbstractModel;
 
-require_once('DBAbstractModel.php');
-
-class Comment extends DBAbstractModel
+class Comment 
 {
     private $user;
     private $comment;
@@ -25,31 +22,7 @@ class Comment extends DBAbstractModel
         $this->approved="";
         $this->updated="";
     }
-    public function get()
-    {
-    }
-    public function set($user_data = array())
-    {
-         foreach ($user_data as $key => $value) {
-            $$campo = $value;
-           
-        } 
-         $this->query="INSERT INTO comment(blog_id,user,comment,approved,created,updated) VALUES(:blog_id,:user,:comment,:approved,:created,:updated)";
-            $this->parametros['blog_id']=$blog;
-            $this->parametros['user']=$$campo->getUser();
-            $this->parametros['comment']=$$campo->getComment();
-            $this->parametros['approved']=1;
-            $this->parametros['created']=$$campo->getCreated();
-            $this->parametros['updated']=$$campo->getUpdated();
-            $this->get_results_from_query();
-            $this->mensaje='SH agregado correctamente';
-    }
-    public function edit()
-    {
-    }
-    public function delete()
-    {
-    }
+   
     public function setUser($newUser)
     {
         $this->user=$newUser;

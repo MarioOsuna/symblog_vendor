@@ -1,12 +1,9 @@
 <?php
 
+require_once './vendor/autoload.php';
 
 use App\Models\Blog;
 use App\Models\Comment;
-
-require_once "app/models/Blog.php";
-require_once "app/models/Comment.php";
-
 
 $blog1 = new Blog();
 $blog1->setTitle('A day with Symfony2');
@@ -146,27 +143,27 @@ $comment16->setBlog($blog5);
 $blog5->addComment($comment15);
 $blog5->addComment($comment16);
 $blogs = [
-$blog1,
-$blog2,
-$blog3,
-$blog4,
-$blog5,
+    $blog1,
+    $blog2,
+    $blog3,
+    $blog4,
+    $blog5,
 ];
 $comments = [
-$comment1,
-$comment2,
-$comment3,
-$comment4,
-$comment5,
-$comment6,
-$comment7,
-$comment8,
-$comment9,
-$comment10,
-$comment11,
-$comment12,
-$comment13,
-$comment14,
-$comment15,
-$comment16,
+    $comment1,
+    $comment2,
+    $comment3,
+    $comment4,
+    $comment5,
+    $comment6,
+    $comment7,
+    $comment8,
+    $comment9,
+    $comment10,
+    $comment11,
+    $comment12,
+    $comment13,
+    $comment14,
+    $comment15,
+    $comment16,
 ];

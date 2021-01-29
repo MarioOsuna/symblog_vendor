@@ -2,10 +2,9 @@
 
 namespace App\Models;
 
-use DBAbstractModel;
 
-require_once('DBAbstractModel.php');
-class Blog extends DBAbstractModel
+
+class Blog 
 {
     private $title;
     private $blog;
