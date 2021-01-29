@@ -2,6 +2,8 @@
 <?php
 require_once './vendor/autoload.php';
 
+use App\Models\Blog;
+
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 $capsule = new Capsule;
@@ -13,13 +15,21 @@ $capsule->addConnection([
     'username'  => 'root',
     'password'  => '',
     'charset'   => 'utf8',
-    'collation' => 'utf8_unicode_ci',
+    'collation' => 'utf8_general_ci',
     'prefix'    => '',
 ]);
 
+$capsule->SetAsGlobal();
+
+$capsule->bootEloquent();
 
 if(!empty($_POST)){
-    
+    $blog=new Blog();
+    $blog->title=$_POST['title'];
+    $blog->blog=$_POST['description'];
+    $blog->tags=$_POST['tag'];
+    $blog->author=$_POST['author'];
+    $blog->save();
 }
 
 
@@ -65,11 +75,11 @@ if(!empty($_POST)){
         <div class="dis">
             <section class="main-col">
             <h2>Añadir formulario</h2>
-                <form id="formulario" action="addBlog.php" method="get">
-                    <div>Title:&nbsp;&nbsp;<input type="text"></div><br>
-                    <div>Description:&nbsp;&nbsp;<textarea name="" id="" cols="50" rows="10"></textarea></div><br>
-                    <div>Tags:&nbsp;&nbsp;<input type="text"></div><br>
-                    <div>Author:&nbsp;&nbsp;<input type="text"></div><br>
+                <form id="formulario" action="addBlog.php" method="post">
+                    <div>Title:&nbsp;&nbsp;<input name="title" type="text"></div><br>
+                    <div>Description:&nbsp;&nbsp;<textarea name="description" id="" cols="50" rows="10"></textarea></div><br>
+                    <div>Tags:&nbsp;&nbsp;<input name="tag" type="text"></div><br>
+                    <div>Author:&nbsp;&nbsp;<input name="author" type="text"></div><br>
                     <div><input type="submit" value="Enviar consulta" name="Enviar consulta"></div>
 
                 </form>

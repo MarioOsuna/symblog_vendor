@@ -1,7 +1,38 @@
 <?php
 
 
-include 'datos.php';
+// include 'datos.php';
+
+require_once './vendor/autoload.php';
+
+use App\Models\Blog;
+
+use Illuminate\Database\Capsule\Manager as Capsule;
+
+$capsule = new Capsule;
+
+$capsule->addConnection([
+    'driver'    => 'mysql',
+    'host'      => 'localhost',
+    'database'  => 'bd_symblog',
+    'username'  => 'root',
+    'password'  => '',
+    'charset'   => 'utf8',
+    'collation' => 'utf8_general_ci',
+    'prefix'    => '',
+]);
+
+$capsule->SetAsGlobal();
+
+$capsule->bootEloquent();
+
+
+foreach (Blog::all() as $blog) {
+    echo $blog->title."<br>";
+}
+
+
+
 
 ?>
 <!DOCTYPE html>
@@ -45,7 +76,7 @@ include 'datos.php';
             <section class="main-col">
 
                 <?php
-                foreach ($blogs as $key => $value) {
+                /* foreach ($blogs as $key => $value) {
                     echo "<article class='blog'>
                 <div class='date'>
                     <time datetime=''>" . $value->getCreated() . "</time>
@@ -65,7 +96,7 @@ include 'datos.php';
                 </footer>
             </article>";
                 }
-
+ */
                 ?>
 
               
